@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apirest.models import Aluno, Curso
+from apirest.models import Aluno, Curso, Matricula
 
 
 class Alunos (admin.ModelAdmin):
@@ -27,3 +27,11 @@ class Cursos (admin.ModelAdmin):
 
 
 admin.site.register(Curso, Cursos)
+
+class Matriculas (admin.ModelAdmin):
+
+    list_display = ('id', 'aluno', 'curso')
+
+    list_display_links = ('id',)
+
+admin.site.register(Matricula, Matriculas)
